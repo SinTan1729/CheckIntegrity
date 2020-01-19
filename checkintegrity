@@ -1,0 +1,10 @@
+#!/bin/bash
+
+f=$1
+f+="sum $2 | cut -d ' ' -f1"
+
+if [ $(eval $f) = "$3" ]; then
+    echo "$2 is fine."
+else
+    echo "$2 is corrupted!"
+fi

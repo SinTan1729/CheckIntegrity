@@ -31,6 +31,6 @@ You can type `CheckIntegrity -h` for help.
 
 ### _You might buy me a cup of coffee:_
 
-**UPI (preferred) : sayantan.santra@paytm**
+**UPI (preferred) : sintan@ybl**
 
 **PayPal : sayantan.santra689@gmail.com** 

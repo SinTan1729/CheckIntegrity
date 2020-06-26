@@ -1,10 +1,33 @@
 #!/bin/sh
 
+# formatting
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+# error function
+error(){
+        printf "The syntax is as follows :\n\n\t${bold}CheckIntegrity algo filename hash${normal}\n\n${bold}algo${normal} is the algorithm to use (e.g. md5, sha1, sha256 etc.)\n${bold}filename${normal} is the relative/full path to file\n${bold}hash${normal} is the given hash to match with\n\n"
+}
+
+# check if asking for help
+if [ $# -eq 1 ] && [ $1 = "-h" ]; then
+    error
+    exit 1
+fi
+
+# check validity of input
+if [ $# -ne 3 ]; then
+    printf "${bold}Input is wrong!${normal}\n\n"
+    error
+    exit -1
+fi
+
+# main code
 f=$1
 f+="sum $2 | cut -d ' ' -f1"
 
 if [ $(eval $f) = "$3" ]; then
-    echo "$2 is fine."
+    echo "$2 is ${bold}fine.${normal}"
 else
-    echo "$2 is corrupted!"
+    echo "$2 is ${bold}corrupted!${normal}"
 fi

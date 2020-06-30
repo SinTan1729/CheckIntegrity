@@ -10,17 +10,10 @@ error(){
 }
 
 # check if asking for help
-if [ $# -eq 1 ] && [ $1 = "-h" ]; then
-    error
-    exit 1
-fi
+[ $# -eq 1 ] & [ $1 = "-h" ] && error && exit 1
 
 # check validity of input
-if [ $# -ne 3 ]; then
-    printf "${bold}Input is wrong!${normal}\n\n"
-    error
-    exit -1
-fi
+[ $# -ne 3 ] && printf "${bold}Input is wrong!${normal}\n\n" && error && exit -1
 
 # main code
 f=$1

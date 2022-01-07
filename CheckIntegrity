@@ -1,7 +1,8 @@
 #!/bin/sh
 
 # formatting
-bold=$(tput bold)
+red=$(tput setaf 1)
+green=$(tput setaf 2)
 normal=$(tput sgr0)
 
 # error function
@@ -19,7 +20,7 @@ error(){
 f="$1sum $2 | cut -d ' ' -f1"
 
 if [ $(eval $f) = "$3" ]; then
-    echo "$2 is ${bold}fine.${normal}"
+    echo "$2 is ${green}fine.${normal}"
 else
-    echo "$2 is ${bold}corrupted!${normal}"
+    echo "$2 is ${red}corrupted!${normal}"
 fi

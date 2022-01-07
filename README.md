@@ -28,9 +28,3 @@ The syntax is as follows :
 `hash` is the given hash to match with
 
 You can type `CheckIntegrity -h` for help.
-
-### _You might buy me a cup of coffee:_
-
-**UPI (preferred) : sintan@ybl**
-
-**PayPal : sayantan.santra689@gmail.com** 
